@@ -14,6 +14,7 @@ import {
 } from 'lucide-react'
 import AmbientBackground from './components/AmbientBackground.jsx'
 import CouponShowcase from './components/CouponShowcase.jsx'
+import CommunityPerks from './components/CommunityPerks.jsx'
 import Intro from './components/Intro.jsx'
 import WhatsAppButton from './components/WhatsAppButton.jsx'
 import { useMotionPreference } from './hooks/useMotionPreference.js'
@@ -255,6 +256,7 @@ export default function App() {
                   </div>
                 </div>
               </div>
+              <CommunityPerks text={text} />
             </div>
             <CouponShowcase
               text={text}

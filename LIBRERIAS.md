@@ -117,3 +117,10 @@ Revisión: 2026-10-07. Leer completo antes de cambiar UI, animaciones o efectos.
 - Reutilizar flex y transform de CSS nativo para agrupar logo y título en la misma fila a 700 px o menos. El ancho del texto determina el grupo; reservar el ancho final del logo y el badge evita posiciones independientes desparejas. Logo original de 164 px al inicio y 59,04 px al terminar, texto adaptable de 33 a 56 px. Sin otra librería ni medición JavaScript.
 - Cambiar el recorte del overlay a `overflow: clip`: las luces decorativas ampliaban su área desplazable y el enfoque del botón durante QA movía internamente la composición. Conservar foco, omisión, temporizadores y alternativa reducida.
 - Medición actualizada: JS 56,31 KB gzip; CSS 10,44 KB gzip. Comprobados 320/390 px, horizontal 700×320, breakpoint 701 px, escritorio, ES/PT y movimiento reducido. Evidencia en `docs/verification.md`.
+
+### Beneficios de IVA y envío — 2026-10-07
+
+- Reutilizar `ReceiptText` y `Truck` del set Lucide ya adoptado, tipografía existente y CSS nativo para un bloque chocolate bajo el 7%/3%. Sin nuevas dependencias, activos ni otro motor. Iconos decorativos, jerarquía semántica y texto de apoyo >=12 px.
+- Contenido comercial confirmado por Bryan: ElaBela absorbe el IVA para clientes paraguayos; envío gratis a todo Paraguay, sin compra mínima. Presentar la absorción como beneficio de ElaBela y conservar el significado en ES/PT.
+- Entrada y brillo mediante keyframes existentes, cubiertos por pausa global y movimiento reducido. Medir peso y comprobar escritorio/320/390 px, traducción y lectura sin JavaScript.
+- Medición: JS 56,79 KB gzip (+0,48 KB); CSS 10,82 KB gzip (+0,38 KB). Verificados ES/PT en 320/390/escritorio, saltos de línea, ausencia de desbordamiento, pausa y movimiento reducido. Beneficios y contacto visibles con JavaScript desactivado. Detalles en `docs/verification.md`.

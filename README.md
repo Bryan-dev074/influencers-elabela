@@ -2,6 +2,8 @@
 
 Landing informativa para presentar el programa de cupones de ElaBela: **7% de descuento para el cliente** y **3% de comisión para el influencer**. El nombre y el diseño del cupón se eligen como muestra y preparan una consulta por WhatsApp para conversar sobre la colaboración.
 
+Debajo de los porcentajes se destacan los beneficios confirmados para clientes paraguayos: **ElaBela absorbe el IVA** y ofrece **envío gratis a todo Paraguay, sin compra mínima**. El bloque está disponible en español y portugués; el contenido también aparece en la alternativa sin JavaScript.
+
 La página no registra influencers, no activa cupones y no procesa ventas ni comisiones. Las condiciones adicionales se acuerdan con ElaBela.
 
 ## Desarrollo local

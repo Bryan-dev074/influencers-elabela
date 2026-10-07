@@ -1,0 +1,108 @@
+.community-perks {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  max-width: 460px;
+  margin-top: 24px;
+  padding: 22px 24px;
+  border: 1px solid #b88b6266;
+  border-radius: 18px;
+  background:
+    radial-gradient(ellipse at 100% 0, #b47b4533, transparent 65%),
+    linear-gradient(125deg, #53372a, #342019);
+  color: #fff0df;
+  text-align: left;
+  box-shadow:
+    0 14px 32px #57392f1a,
+    inset 0 1px 0 #f7d9b033;
+  animation: enter-up 800ms 1350ms both;
+}
+.community-perks::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(
+    110deg,
+    transparent 35%,
+    #f6d7af12 50%,
+    transparent 65%
+  );
+  transform: translateX(-110%);
+  animation: button-sheen 8s 2s infinite;
+}
+.community-perks > h2 {
+  margin-bottom: 18px;
+  color: #edcda9;
+  font:
+    500 12px/1.5 'Poppins',
+    Arial,
+    sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.community-perk {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.community-perk + .community-perk {
+  margin-top: 17px;
+  padding-top: 17px;
+  border-top: 1px solid #d8b58a33;
+}
+.community-perk-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #dfb88b4d;
+  border-radius: 12px;
+  background: #d3aa7c14;
+  color: #edc79a;
+}
+.community-perk > div {
+  min-width: 0;
+}
+.community-perk h3 {
+  margin: 0 0 5px;
+  font:
+    500 25px/1.25 'Playfair Display',
+    Georgia,
+    serif;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+.community-perk p {
+  color: #e4cdbb;
+  font-size: 12px;
+  line-height: 1.7;
+  text-wrap: balance;
+}
+.scene-waiting .community-perks {
+  animation-name: none !important;
+}
+@media (max-width: 820px) {
+  .community-perks {
+    margin-inline: auto;
+    max-width: 440px;
+  }
+}
+@media (max-width: 560px) {
+  .community-perks {
+    padding: 20px 18px;
+    border-radius: 16px;
+  }
+  .community-perk {
+    gap: 12px;
+  }
+  .community-perk-icon {
+    width: 39px;
+    height: 39px;
+  }
+  .community-perk h3 {
+    font-size: 23px;
+  }
+}
