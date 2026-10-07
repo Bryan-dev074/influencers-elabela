@@ -54,3 +54,12 @@ Solicitud posterior de Bryan, 2026-10-07: mejorar el botón y explicar que el cl
 - Pregunta y respuesta abiertas y verificadas en ambos idiomas. CTA de inicio y cierre producen la misma URL, con `BRYAN & GLOW`/Cacao codificados correctamente y teléfono 595993038777. No se envió ningún mensaje.
 - Foco de teclado visible en el enlace; en pausa, `animation-name:none` en su brillo y transición del icono `0s`. Consola sin errores ni warnings en el recorrido actualizado. Revisión independiente aprobada tras retirar la colisión de icono.
 - Capturas locales: `qa/whatsapp-update-desktop.jpg` y `qa/faq-whatsapp-mobile.jpg`. El despliegue en Vercel continúa separado de la subida del código.
+
+## Actualización — nombres más rápidos e icono de comisión
+
+Solicitud posterior de Bryan, 2026-10-07: acelerar los nombres de ejemplo y cambiar la estrella del badge de comisión por `+$`.
+
+- Nombres cada **2 segundos**; diseños cada **4,8 segundos**. Ambos temporizadores conservan la misma condición de pausa y se limpian juntos. El icono combina `Plus` y `DollarSign` de Lucide, sin dependencias nuevas.
+- Observación controlada en producción: LARABELA/Cacao al reanudar, TUNOMBRE/Cacao a 2,23 s, MARIAGLOW/Cacao a 4,46 s y MARIAGLOW/Sage a 5,09 s. Pausar conservó nombre y diseño otros 2,2 s.
+- Badge verificado en 1366×900 y 320×760: icono completo, sin compresión; a 320 px, `clientWidth=scrollWidth=305`. Consola sin errores ni warnings. Revisión independiente aprobada sin regresiones P1/P2.
+- `npm run check`: tests 12/12, lint, formato y build con exit 0. JS **55,95 KB gzip**; CSS **10,26 KB gzip**. Capturas: `qa/coupon-speed-commission-desktop.jpg` y `qa/coupon-speed-commission-mobile.jpg`.

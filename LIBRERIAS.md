@@ -91,3 +91,9 @@ Revisión: 2026-10-07. Leer completo antes de cambiar UI, animaciones o efectos.
 - Control de efectos y movimiento reducido existentes cubren los nuevos brillos y transiciones. Conservar enlace nativo, foco visible, texto de ayuda >=12 px y adaptación a 320 px; incluir consulta con selección codificada mediante el helper existente.
 - Añadir FAQ autorizada ES/PT sobre compra por WhatsApp con cupón o mención del video del influencer, aplicando 7% de descuento. No cambiar condiciones de comisión ni inventar atribución técnica automática.
 - Medición actualizada: JS 55,81 KB gzip (+0,51 KB), CSS 10,25 KB gzip (+0,55 KB). Sin nuevas dependencias. Verificados ambos CTA y FAQ ES/PT en 320/390/escritorio, foco, pausa y mensajes con selección; detalles en `docs/verification.md`.
+
+### Refinamiento de ejemplos y comisión — 2026-10-07
+
+- Nombres cada 2 segundos y diseños cada 4,8 segundos mediante temporizadores nativos independientes; conservar las pausas por interacción, visibilidad y preferencias de movimiento. Sin motor adicional.
+- Reutilizar `Plus` y `DollarSign` de Lucide para componer el icono `+$` solicitado en la comisión. Mismo set MIT adoptado, sin dependencias nuevas; decoración oculta a lectores de pantalla y espacio reservado para evitar compresión en móvil.
+- Medición actualizada: JS 55,95 KB gzip y CSS 10,26 KB gzip. Rotación y pausa observadas en navegador; badge comprobado en escritorio y a 320 px, sin desbordamiento ni errores de consola.

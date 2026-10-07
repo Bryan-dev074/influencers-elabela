@@ -790,6 +790,12 @@ button {
   gap: 9px;
   color: #775544;
 }
+.commission-gain {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 1px;
+}
 .example-controls {
   display: flex;
   align-items: center;

@@ -2,8 +2,10 @@ import { useEffect, useRef, useState } from 'react'
 import {
   Check,
   ChevronRight,
+  DollarSign,
   Pause,
   Play,
+  Plus,
   Sparkles,
   TicketPercent,
 } from 'lucide-react'
@@ -47,8 +49,10 @@ export default function CouponShowcase({ text, motion, ready, onSelection }) {
 
   useEffect(() => {
     if (!cycling) return
-    const timer = setInterval(() => {
+    const nameTimer = setInterval(() => {
       setExample((current) => nextExampleIndex(current, EXAMPLE_NAMES.length))
+    }, 2000)
+    const designTimer = setInterval(() => {
       setDesignId(
         (current) =>
           COUPON_DESIGNS[
@@ -59,7 +63,10 @@ export default function CouponShowcase({ text, motion, ready, onSelection }) {
           ].id,
       )
     }, 4800)
-    return () => clearInterval(timer)
+    return () => {
+      clearInterval(nameTimer)
+      clearInterval(designTimer)
+    }
   }, [cycling])
 
   const choose = (id) => {
@@ -164,7 +171,10 @@ export default function CouponShowcase({ text, motion, ready, onSelection }) {
           </span>
           <div>
             {text.commission}
-            <Sparkles size={13} aria-hidden="true" />
+            <span className="commission-gain" aria-hidden="true">
+              <Plus size={10} strokeWidth={2.2} />
+              <DollarSign size={17} strokeWidth={1.9} />
+            </span>
           </div>
         </div>
       </div>

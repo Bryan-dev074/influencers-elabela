@@ -52,7 +52,7 @@ Los textos en español y portugués están en `src/data/content.js`. La versión
 
 ## Movimiento e identidad
 
-- Los nombres y los diseños de ejemplo cambian cada **4,8 segundos** mientras el bloque está visible y la página está activa. La rotación se pausa al editar o elegir un diseño, al enfocar o pasar el puntero sobre los controles, al salir del viewport, al ocultar la pestaña y al desactivar los efectos o solicitar movimiento reducido. El control de reproducción permite volver a los ejemplos.
+- Los nombres de ejemplo cambian cada **2 segundos** y los diseños cada **4,8 segundos** mientras el bloque está visible y la página está activa. La rotación se pausa al editar o elegir un diseño, al enfocar o pasar el puntero sobre los controles, al salir del viewport, al ocultar la pestaña y al desactivar los efectos o solicitar movimiento reducido. El control de reproducción permite volver a los ejemplos.
 - La intro utiliza el logo real, lo desplaza hacia la izquierda y presenta “Influencers” con un icono de cupón. Dura aproximadamente **4,85 segundos**, se puede omitir y repetir; con movimiento reducido se acorta a **650 ms**.
 - El fondo responde al puntero mediante `requestAnimationFrame`; los brillos y revelados utilizan CSS. Los efectos tienen control global y respetan `prefers-reduced-motion`.
 - Los activos originales de ElaBela se conservan en `public/brand/`. Playfair Display y Poppins se cargan desde Google Fonts con `display=swap` y fuentes de respaldo; esta carga remota depende de conectividad y se mide aparte del JS/CSS de la aplicación.
