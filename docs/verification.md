@@ -39,4 +39,6 @@ Capturas locales en `qa/desktop-production.jpg`, `qa/mobile-production.jpg` y `q
 
 Revisión visual e interacciones en Chromium del host. No se realizó certificación completa de accesibilidad con lector de pantalla/axe, ni prueba en dispositivos físicos Safari/iOS. La landing es informativa y prepara una consulta; no activa cupones ni calcula pagos.
 
-La publicación Git se confirma con lectura del SHA remoto al cerrar. El despliegue público de Vercel queda a cargo de Bryan; esta evidencia local no afirma que exista una URL pública de la landing.
+Publicación Git confirmada: `git push -u origin HEAD:main` terminó con exit 0 y `git ls-remote --symref origin HEAD refs/heads/main` devolvió `0a5b57775956d5aaeb5ce958722c06768355b164` para `main` y `HEAD`. Rama predeterminada remota: `main`. Repositorio: https://github.com/Bryan-dev074/influencers-elabela. El siguiente commit solamente registra esta confirmación y cierra el plan; su SHA final se verifica en la entrega.
+
+El despliegue público de Vercel queda a cargo de Bryan; esta evidencia local no afirma que exista una URL pública de la landing.
