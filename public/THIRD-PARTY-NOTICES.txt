@@ -5,6 +5,14 @@ Dependencies used by ElaBela Influencers. Google Fonts are served remotely; thei
 Poppins: https://raw.githubusercontent.com/google/fonts/main/ofl/poppins/OFL.txt
 Playfair Display: https://raw.githubusercontent.com/google/fonts/main/ofl/playfairdisplay/OFL.txt
 
+## WhatsApp brand glyphs
+
+WhatsApp is a trademark of WhatsApp LLC (Meta).
+Original, unmodified white and black SVG glyphs from the official 2026 WhatsApp Brand Resource Center package.
+Source and brand guidelines: https://www.meta.com/es-la/brand/resources/whatsapp/whatsapp-brand/
+Archive paths: Brand Resource Center Page Downloads/01_Glyph/01_Digital RGB/03_SVG/Digital_Glyph_White_RGB_2026.svg and Digital_Glyph_Black_RGB_2026.svg.
+The brand glyphs identify the WhatsApp contact destination. They do not imply endorsement or sponsorship.
+
 ## react
 
 MIT License

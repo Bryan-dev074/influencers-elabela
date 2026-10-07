@@ -1,4 +1,4 @@
-import { ArrowUpRight, MessageCircle, Phone } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 
 export default function WhatsAppButton({
   href,
@@ -14,11 +14,25 @@ export default function WhatsAppButton({
       rel="noopener noreferrer"
     >
       <span className="whatsapp-icon" aria-hidden="true">
-        <MessageCircle className="whatsapp-bubble" strokeWidth={1.6} />
-        <Phone className="whatsapp-phone" strokeWidth={2} />
+        <img
+          className="whatsapp-mark"
+          src={
+            variant === 'closing'
+              ? '/brand/whatsapp-black.svg'
+              : '/brand/whatsapp-white.svg'
+          }
+          alt=""
+          width="32"
+          height="32"
+        />
       </span>
       <span className="whatsapp-copy">
-        <span className="whatsapp-title">{children}</span>
+        <span className="whatsapp-title">
+          {children}
+          {variant === 'closing' && (
+            <span className="sr-only"> (WhatsApp)</span>
+          )}
+        </span>
         <span className="whatsapp-detail">{detail}</span>
       </span>
       <span className="whatsapp-arrow" aria-hidden="true">

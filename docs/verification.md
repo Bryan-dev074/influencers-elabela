@@ -63,3 +63,13 @@ Solicitud posterior de Bryan, 2026-10-07: acelerar los nombres de ejemplo y camb
 - Observación controlada en producción: LARABELA/Cacao al reanudar, TUNOMBRE/Cacao a 2,23 s, MARIAGLOW/Cacao a 4,46 s y MARIAGLOW/Sage a 5,09 s. Pausar conservó nombre y diseño otros 2,2 s.
 - Badge verificado en 1366×900 y 320×760: icono completo, sin compresión; a 320 px, `clientWidth=scrollWidth=305`. Consola sin errores ni warnings. Revisión independiente aprobada sin regresiones P1/P2.
 - `npm run check`: tests 12/12, lint, formato y build con exit 0. JS **55,95 KB gzip**; CSS **10,26 KB gzip**. Capturas: `qa/coupon-speed-commission-desktop.jpg` y `qa/coupon-speed-commission-mobile.jpg`.
+
+## Actualización — símbolo de WhatsApp
+
+Corrección visual solicitada por Bryan, 2026-10-07: sustituir el icono compuesto del botón.
+
+- Se retiran la burbuja/teléfono superpuestos, el recuadro y su giro. Se utilizan los SVG originales blanco y negro del paquete oficial de Meta de 2026, sin modificar trazos ni colores. Fuente y titular registrados en `public/THIRD-PARTY-NOTICES.txt`.
+- Dimensiones comprobadas en producción: 32×32 px en escritorio, 30×30 a 390 px y 28×28 a 320 px. Ambos recursos cargan; el contenedor no tiene fondo ni transformación. El cierre claro usa el símbolo negro y conserva el nombre accesible con “WhatsApp”.
+- ES/PT: ambos enlaces conservan el teléfono 595993038777 y su mensaje correspondiente. En 320 px, contenido del CTA hero ocupa 249 px de 249 disponibles; cierre 211 de 211. En 390 px, 305 de 305 y 267 de 267 respectivamente. Sin desbordamiento del documento: `clientWidth=scrollWidth=305` a 320 y 375 a 390. El brillo decorativo se recorta dentro del botón.
+- Foco de teclado visible y consola sin errores ni warnings en el recorrido. Revisión independiente de código y activos sin regresiones concretas.
+- `npm run check` completo: tests 12/12, lint, formato y build con exit 0. JS **55,83 KB gzip**, CSS **10,17 KB gzip**, SVG externos 2.349 bytes en total. Capturas: `qa/whatsapp-glyph-button.jpg` y `qa/whatsapp-glyph-mobile-closing.jpg`.

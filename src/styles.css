@@ -2723,7 +2723,6 @@ button {
   --cta-end: #174b3d;
   --cta-ink: #fffaf0;
   --cta-detail: #d5e6dc;
-  --cta-badge: #ffffff12;
   --cta-border: #e6e9c72e;
   --cta-arrow: #ffffff0e;
   position: relative;
@@ -2777,28 +2776,17 @@ button {
   outline-offset: 5px;
 }
 .whatsapp-icon {
-  position: relative;
   display: grid;
   place-items: center;
-  width: 49px;
-  height: 49px;
+  width: 40px;
+  height: 40px;
   flex: 0 0 auto;
-  border-radius: 14px;
-  background: var(--cta-badge);
-  border: 1px solid var(--cta-border);
-  box-shadow: inset 0 1px 0 #fff1;
-  transition: transform 0.3s;
 }
-.whatsapp-bubble {
-  width: 29px;
-  height: 29px;
-}
-.whatsapp-phone {
-  position: absolute;
-  width: 13px;
-  height: 13px;
-  top: 16px;
-  left: 17px;
+.whatsapp-mark {
+  display: block;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
 }
 .whatsapp-copy {
   flex: 1;
@@ -2832,9 +2820,6 @@ button {
 .whatsapp-arrow svg {
   transition: transform 0.25s;
 }
-.button-whatsapp:hover .whatsapp-icon {
-  transform: rotate(-5deg);
-}
 .button-whatsapp:hover .whatsapp-arrow {
   background: #ffffff20;
 }
@@ -2846,16 +2831,12 @@ button {
   --cta-end: #d8e5d5;
   --cta-ink: #244f3d;
   --cta-detail: #476953;
-  --cta-badge: #315f48;
   --cta-border: #c4d3b955;
   --cta-arrow: #ffffff4d;
   width: min(100%, 510px);
   box-shadow:
     0 15px 26px -12px #1b1a1480,
     inset 0 1px 0 #fff8;
-}
-.button-whatsapp--closing .whatsapp-icon {
-  color: #fffaf0;
 }
 .button.button-whatsapp--closing:focus-visible {
   outline-color: #d8e5d5;
@@ -2870,13 +2851,12 @@ button {
     font-size: 13px;
   }
   .whatsapp-icon {
-    width: 42px;
-    height: 42px;
-    border-radius: 12px;
+    width: 34px;
+    height: 34px;
   }
-  .whatsapp-phone {
-    top: 12px;
-    left: 13px;
+  .whatsapp-mark {
+    width: 30px;
+    height: 30px;
   }
   .whatsapp-arrow {
     width: 30px;
@@ -2892,18 +2872,12 @@ button {
     font-size: 12px;
   }
   .whatsapp-icon {
-    width: 38px;
-    height: 38px;
+    width: 30px;
+    height: 30px;
   }
-  .whatsapp-bubble {
-    width: 26px;
-    height: 26px;
-  }
-  .whatsapp-phone {
-    width: 12px;
-    height: 12px;
-    top: 11px;
-    left: 12px;
+  .whatsapp-mark {
+    width: 28px;
+    height: 28px;
   }
   .whatsapp-arrow {
     width: 27px;

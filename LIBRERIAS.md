@@ -97,3 +97,10 @@ Revisión: 2026-10-07. Leer completo antes de cambiar UI, animaciones o efectos.
 - Nombres cada 2 segundos y diseños cada 4,8 segundos mediante temporizadores nativos independientes; conservar las pausas por interacción, visibilidad y preferencias de movimiento. Sin motor adicional.
 - Reutilizar `Plus` y `DollarSign` de Lucide para componer el icono `+$` solicitado en la comisión. Mismo set MIT adoptado, sin dependencias nuevas; decoración oculta a lectores de pantalla y espacio reservado para evitar compresión en móvil.
 - Medición actualizada: JS 55,95 KB gzip y CSS 10,26 KB gzip. Rotación y pausa observadas en navegador; badge comprobado en escritorio y a 320 px, sin desbordamiento ni errores de consola.
+
+### Corrección del símbolo de WhatsApp — 2026-10-07
+
+- Adoptado: SVG original de WhatsApp desde el centro de marca de Meta (https://www.meta.com/es-la/brand/resources/whatsapp/whatsapp-brand/), para sustituir la burbuja/teléfono superpuestos. Variantes blanca (1.168 bytes, hero) y negra (1.181 bytes, cierre), `viewBox="0 0 720 720"`, del ZIP oficial de 2026. Conservadas sin modificar. El recurso está sujeto a las normas de marca de Meta; fuente registrada en los avisos.
+- Diseño: un símbolo con proporciones originales, sin recuadro ni giro; conservar colores de la variante oficial. Lucide sigue cubriendo los controles genéricos; el recurso de marca no incorpora otro set ni runtime. Renderizar como imagen decorativa con tamaño reservado y enlace con texto visible.
+- Descartar una instalación de Simple Icons: un único activo oficial satisface esta corrección. CC0 del catálogo no sustituye las condiciones de la marca.
+- Medición: JS 55,83 KB gzip; CSS 10,17 KB gzip; SVG externos 2,35 KB en total sin comprimir. QA de ambos botones en 1366/320/390 px y ES/PT, imágenes cargadas, proporciones intactas, texto completo y foco visible. Detalles en `docs/verification.md`.
