@@ -8,7 +8,7 @@
   inset: 0;
   z-index: 100;
   color: #fcebdc;
-  overflow: hidden;
+  overflow: clip;
   isolation: isolate;
 }
 .intro-panel {
@@ -111,6 +111,10 @@
   transform: translate(-50%, -50%);
   animation: intro-lockup-out 500ms var(--intro-exit-delay) var(--intro-ease)
     both;
+}
+.intro-lockup {
+  position: absolute;
+  inset: 0;
 }
 .intro-logo-anchor {
   position: absolute;
@@ -388,18 +392,45 @@
 @media (max-width: 700px) {
   .intro {
     --intro-stage-width: calc(100vw - 40px);
-    --intro-logo-x: calc(-50vw + 62px);
-    --intro-logo-y: -44px;
-    --intro-logo-scale: 0.45;
+    --intro-logo-width: 164px;
+    --intro-logo-height: 149px;
+    --intro-logo-scale: 0.36;
+    --intro-logo-slot: calc(var(--intro-logo-width) * var(--intro-logo-scale));
+    --intro-logo-x: calc(-50% + var(--intro-logo-slot) / 2);
+    --intro-logo-y: 0px;
+  }
+  .intro-composition {
+    height: 220px;
+  }
+  .intro-lockup {
+    inset: auto;
+    top: 48px;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    width: max-content;
+    height: 68px;
+    padding-inline: calc(var(--intro-logo-slot) + 20px) 20px;
+    transform: translateX(-50%);
   }
   .intro-logo-anchor {
-    top: 32px;
-    width: 164px;
-    height: 149px;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: var(--intro-logo-height);
+    transform: translateY(-50%);
+  }
+  .intro-logo-mark {
+    width: var(--intro-logo-width);
+    height: var(--intro-logo-height);
+    margin-inline: auto;
   }
   .intro-word {
-    top: 138px;
-    font-size: clamp(33px, 8.2vw, 56px);
+    position: relative;
+    top: auto;
+    left: auto;
+    font-size: clamp(33px, 10.6vw, 56px);
+    transform: none;
   }
   .intro-ticket {
     width: 32px;
@@ -413,12 +444,12 @@
     height: 19px;
   }
   .intro-caption {
-    top: 206px;
+    top: 142px;
     font-size: 12px;
     letter-spacing: 0.1em;
   }
   .intro-underline {
-    top: 252px;
+    top: 190px;
   }
   .intro-ticket-outline {
     width: 88vw;

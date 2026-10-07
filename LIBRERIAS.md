@@ -108,6 +108,12 @@ Revisión: 2026-10-07. Leer completo antes de cambiar UI, animaciones o efectos.
 ### Rediseño de la intro — 2026-10-07
 
 - Reutilizar el SVG real, Playfair/Poppins, Lucide y CSS nativo. Logo grande, luz recortada, silueta de cupón, letras escalonadas y apertura de dos paneles. Sin nuevas dependencias ni motores; transform/opacity para el movimiento.
-- Centralizar duración (4,55 s) y comienzo de salida (3,75 s) en el componente y pasarlos a CSS. Revelar la página antes de retirar el diálogo, manteniendo `inert` hasta el cierre. Composición en dos niveles a 700 px o menos para preservar tamaño y evitar cruces entre logo, título y cupón.
+- Centralizar duración (4,55 s) y comienzo de salida (3,75 s) en el componente y pasarlos a CSS. Revelar la página antes de retirar el diálogo, manteniendo `inert` hasta el cierre. Adaptar la composición a 700 px o menos; ver el ajuste móvil siguiente.
 - Conservar omisión/replay, foco y preferencia de efectos; versión estática de 650 ms, sin extender una intro ya abreviada. Verificar teclado, cancelación de temporizadores y salida integrada en navegador.
 - Medición final: JS 56,30 KB gzip (+0,47 KB) y CSS 10,33 KB gzip (+0,16 KB). Verificadas secuencia, apertura, teclado, replay, ES/PT, 320/390/561/escritorio y movimiento reducido; ver `docs/verification.md`.
+
+### Corrección de la intro móvil — 2026-10-07
+
+- Reutilizar flex y transform de CSS nativo para agrupar logo y título en la misma fila a 700 px o menos. El ancho del texto determina el grupo; reservar el ancho final del logo y el badge evita posiciones independientes desparejas. Logo original de 164 px al inicio y 59,04 px al terminar, texto adaptable de 33 a 56 px. Sin otra librería ni medición JavaScript.
+- Cambiar el recorte del overlay a `overflow: clip`: las luces decorativas ampliaban su área desplazable y el enfoque del botón durante QA movía internamente la composición. Conservar foco, omisión, temporizadores y alternativa reducida.
+- Medición actualizada: JS 56,31 KB gzip; CSS 10,44 KB gzip. Comprobados 320/390 px, horizontal 700×320, breakpoint 701 px, escritorio, ES/PT y movimiento reducido. Evidencia en `docs/verification.md`.

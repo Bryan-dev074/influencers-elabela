@@ -16,6 +16,8 @@ Usar CSS propio y las APIs nativas del navegador para el movimiento: keyframes y
 
 Para la intro refinada, distinguir revelado visual y final del diálogo. `Intro` centraliza el inicio de salida y la duración total, pasa los tiempos a CSS y avisa a `App` con `onReveal` antes de `onComplete`. La escena puede empezar a aparecer mientras el diálogo todavía conserva `inert` y el foco. Omitir salta directamente al cierre; una preferencia reducida abrevia la secuencia sin extender una ya iniciada. Los estilos propios quedan en `src/components/Intro.css`.
 
+En móvil, el grupo de logo y título se centra por su ancho intrínseco, reservando espacio para el logo reducido y el cupón. El desplazamiento del logo se calcula respecto a ese grupo, sin medirlo desde JavaScript. El overlay usa `overflow: clip` para impedir que luces y paneles decorativos lo conviertan en un contenedor desplazable durante el enfoque.
+
 No incorporar GSAP ni Motion para esta entrega. La secuencia actual no justifica un runtime adicional. Tampoco incorporar WebGL, Tailwind, otro set de iconos o primitivas headless: los controles nativos cubren las interacciones presentes y Lucide React 0.469.0 aporta el único set de iconos.
 
 Mantener botones, inputs, fieldsets y details nativos; texto legible, nombres accesibles, foco y estados de selección explícitos. Ofrecer pausa de ejemplos, control global de efectos y omisión/repetición de intro. Respetar `prefers-reduced-motion`, detener actividad no visible y proporcionar contenido y contacto mediante `<noscript>` cuando JavaScript esté desactivado. La revisión visual, de teclado y de accesibilidad se registra por separado; esta decisión no sustituye esas comprobaciones.

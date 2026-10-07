@@ -97,37 +97,39 @@ export default function Intro({ active, reduced, text, onReveal, onComplete }) {
         {text.program}
       </div>
       <div className="intro-composition">
-        <div className="intro-logo-anchor">
-          <div className="intro-logo">
-            <div className="intro-logo-mark">
-              <img
-                src="/brand/logo-cream.svg"
-                alt="ElaBela Glow"
-                width="220"
-                height="200"
-              />
-              <span className="intro-logo-shine" aria-hidden="true">
-                <i />
-              </span>
+        <div className="intro-lockup">
+          <div className="intro-logo-anchor">
+            <div className="intro-logo">
+              <div className="intro-logo-mark">
+                <img
+                  src="/brand/logo-cream.svg"
+                  alt="ElaBela Glow"
+                  width="220"
+                  height="200"
+                />
+                <span className="intro-logo-shine" aria-hidden="true">
+                  <i />
+                </span>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="intro-word">
-          <span className="sr-only">Influencers</span>
-          <span className="intro-word-text" aria-hidden="true">
-            {Array.from('Influencers').map((letter, index) => (
-              <span
-                className="intro-letter"
-                key={index}
-                style={{ '--intro-letter-delay': `${index * 38}ms` }}
-              >
-                {letter}
-              </span>
-            ))}
-          </span>
-          <span className="intro-ticket" aria-hidden="true">
-            <TicketPercent strokeWidth={1.35} />
-          </span>
+          <div className="intro-word">
+            <span className="sr-only">Influencers</span>
+            <span className="intro-word-text" aria-hidden="true">
+              {Array.from('Influencers').map((letter, index) => (
+                <span
+                  className="intro-letter"
+                  key={index}
+                  style={{ '--intro-letter-delay': `${index * 38}ms` }}
+                >
+                  {letter}
+                </span>
+              ))}
+            </span>
+            <span className="intro-ticket" aria-hidden="true">
+              <TicketPercent strokeWidth={1.35} />
+            </span>
+          </div>
         </div>
         <p className="intro-caption">{text.introCaption}</p>
         <span className="intro-underline" aria-hidden="true" />
