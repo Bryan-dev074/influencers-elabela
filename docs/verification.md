@@ -73,3 +73,14 @@ Corrección visual solicitada por Bryan, 2026-10-07: sustituir el icono compuest
 - ES/PT: ambos enlaces conservan el teléfono 595993038777 y su mensaje correspondiente. En 320 px, contenido del CTA hero ocupa 249 px de 249 disponibles; cierre 211 de 211. En 390 px, 305 de 305 y 267 de 267 respectivamente. Sin desbordamiento del documento: `clientWidth=scrollWidth=305` a 320 y 375 a 390. El brillo decorativo se recorta dentro del botón.
 - Foco de teclado visible y consola sin errores ni warnings en el recorrido. Revisión independiente de código y activos sin regresiones concretas.
 - `npm run check` completo: tests 12/12, lint, formato y build con exit 0. JS **55,83 KB gzip**, CSS **10,17 KB gzip**, SVG externos 2.349 bytes en total. Capturas: `qa/whatsapp-glyph-button.jpg` y `qa/whatsapp-glyph-mobile-closing.jpg`.
+
+## Actualización — intro y transición hacia la landing
+
+Rediseño solicitado por Bryan, 2026-10-07: mejorar de forma visible la presentación inicial.
+
+- Nuevo escenario chocolate con luz tenue y silueta de cupón, logo original grande, brillo recortado, desplazamiento mediante transform, letras escalonadas y badge de cupón. Se retiran la gota, ondas y keyframes de layout antiguos. CSS de la intro separado en `src/components/Intro.css`, sin otra dependencia ni motor.
+- Línea de tiempo centralizada: comienzo de apertura y revelado a 3.750 ms; retirada completa a 4.550 ms. La página empieza sus entradas durante la apertura, conserva `inert` hasta el cierre y devuelve foco al título después del commit. Se observaron letras visibles (`opacity≈0,92`) con diálogo todavía presente y panel superior desplazado; después, diálogo ausente, `inert` retirado y `overflow` restaurado.
+- Composición comprobada en 1366×900, 320×760, 390×844 y 561×820. Logo inicial 200 px en escritorio/164 px en móvil; final 116 px/73,8 px. A 320 y 561, título y logo ocupan dos niveles y no se cruzan; texto y badge quedan dentro del viewport. ES/PT verificados, incluyendo el subtítulo portugués completo.
+- Teclado: Tab y Shift+Tab mantienen el foco en Entrar ahora; Escape y clic omiten la intro y devuelven foco a `main-title`. Replay vuelve a ocultar la escena y reinicia los efectos. El cupón automático espera hasta el cierre.
+- Movimiento reducido: composición final estática, `animation-name:none`, cierre tras 650 ms. Activar la preferencia en medio de una intro y desactivarla 150 ms después mantuvo la versión abreviada y cerró sin extenderse. Emulación retirada al terminar. Consola sin errores ni warnings en el recorrido.
+- `npm run check`: tests 12/12, lint, formato y build con exit 0. JS **56,30 KB gzip**, CSS **10,33 KB gzip**. Capturas: `qa/intro-logo-desktop.jpg`, `qa/intro-lockup-desktop.jpg`, `qa/intro-exit-desktop.jpg`, `qa/intro-lockup-mobile.jpg`, `qa/intro-lockup-portuguese.jpg` y `qa/intro-reduced-mobile.jpg`.

@@ -54,15 +54,17 @@ function LetterTitle({ lines }) {
 export default function App() {
   const [language, setLanguage] = useState('es')
   const [introActive, setIntroActive] = useState(true)
+  const [introRevealed, setIntroRevealed] = useState(false)
   const [selection, setSelection] = useState(null)
   const { active: motion, reduced, toggle } = useMotionPreference()
   const text = content[language]
   const main = useRef(null)
+  const revealIntro = useCallback(() => {
+    setIntroRevealed(true)
+  }, [])
   const closeIntro = useCallback(() => {
+    setIntroRevealed(true)
     setIntroActive(false)
-    requestAnimationFrame(() =>
-      document.getElementById('main-title')?.focus({ preventScroll: true }),
-    )
   }, [])
   const href = buildWhatsAppUrl({
     phone: CONTACT_PHONE,
@@ -79,9 +81,20 @@ export default function App() {
     }
   }, [motion])
   useEffect(() => {
-    document.body.style.overflow = introActive ? 'hidden' : ''
+    if (!introActive) return
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
     return () => {
-      document.body.style.overflow = ''
+      document.body.style.overflow = previousOverflow
+    }
+  }, [introActive])
+  useEffect(() => {
+    if (introActive) return
+    const frame = requestAnimationFrame(() =>
+      document.getElementById('main-title')?.focus({ preventScroll: true }),
+    )
+    return () => {
+      cancelAnimationFrame(frame)
     }
   }, [introActive])
   useEffect(() => {
@@ -106,20 +119,22 @@ export default function App() {
   }, [introActive, motion])
   const replayIntro = () => {
     window.scrollTo({ top: 0, behavior: 'instant' })
+    setIntroRevealed(false)
     setIntroActive(true)
   }
   const stepIcons = [MessageCircle, Signature, ShoppingBag]
   return (
     <div className={`app ${motion ? 'motion-enabled' : 'motion-paused'}`}>
-      <AmbientBackground active={motion && !introActive} />
+      <AmbientBackground active={motion && (introRevealed || !introActive)} />
       <Intro
         active={introActive}
         reduced={!motion}
         text={text}
+        onReveal={revealIntro}
         onComplete={closeIntro}
       />
       <div
-        className={`page-scene ${introActive ? 'scene-waiting' : 'scene-ready'}`}
+        className={`page-scene ${introActive && !introRevealed ? 'scene-waiting' : 'scene-ready'}`}
         inert={introActive ? '' : undefined}
       >
         <a className="skip-link" href="#contenido">

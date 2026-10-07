@@ -104,3 +104,10 @@ Revisión: 2026-10-07. Leer completo antes de cambiar UI, animaciones o efectos.
 - Diseño: un símbolo con proporciones originales, sin recuadro ni giro; conservar colores de la variante oficial. Lucide sigue cubriendo los controles genéricos; el recurso de marca no incorpora otro set ni runtime. Renderizar como imagen decorativa con tamaño reservado y enlace con texto visible.
 - Descartar una instalación de Simple Icons: un único activo oficial satisface esta corrección. CC0 del catálogo no sustituye las condiciones de la marca.
 - Medición: JS 55,83 KB gzip; CSS 10,17 KB gzip; SVG externos 2,35 KB en total sin comprimir. QA de ambos botones en 1366/320/390 px y ES/PT, imágenes cargadas, proporciones intactas, texto completo y foco visible. Detalles en `docs/verification.md`.
+
+### Rediseño de la intro — 2026-10-07
+
+- Reutilizar el SVG real, Playfair/Poppins, Lucide y CSS nativo. Logo grande, luz recortada, silueta de cupón, letras escalonadas y apertura de dos paneles. Sin nuevas dependencias ni motores; transform/opacity para el movimiento.
+- Centralizar duración (4,55 s) y comienzo de salida (3,75 s) en el componente y pasarlos a CSS. Revelar la página antes de retirar el diálogo, manteniendo `inert` hasta el cierre. Composición en dos niveles a 700 px o menos para preservar tamaño y evitar cruces entre logo, título y cupón.
+- Conservar omisión/replay, foco y preferencia de efectos; versión estática de 650 ms, sin extender una intro ya abreviada. Verificar teclado, cancelación de temporizadores y salida integrada en navegador.
+- Medición final: JS 56,30 KB gzip (+0,47 KB) y CSS 10,33 KB gzip (+0,16 KB). Verificadas secuencia, apertura, teclado, replay, ES/PT, 320/390/561/escritorio y movimiento reducido; ver `docs/verification.md`.
