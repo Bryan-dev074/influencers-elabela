@@ -102,3 +102,12 @@ Rediseño solicitado por Bryan, 2026-10-07: mejorar de forma visible la presenta
 - Alternativa sin JavaScript comprobada en navegador con ejecución desactivada: el programa, los dos beneficios completos y el WhatsApp comercial siguen visibles. Emulación desactivada al terminar.
 - `npm run check`: tests 12/12, lint, formato y build con exit 0. JS **56,79 KB gzip**, CSS **10,82 KB gzip**; sin dependencias nuevas. Capturas: `qa/perks-mobile-390.jpg`, `qa/perks-mobile-320.jpg`, `qa/perks-mobile-pt-320.jpg`, `qa/perks-desktop.jpg` y `qa/perks-no-js.jpg`.
 - Verificación visual en Chromium con tamaños emulados; no se verificó un teléfono físico ni Safari móvil.
+
+## Refinamiento — beneficios abiertos e iconos animados
+
+- Bryan rechazó la tarjeta chocolate de IVA/envío. Se retira por completo su fondo, borde, sombra, recuadros de iconos y brillo envolvente. Los beneficios quedan sobre el fondo de la landing, bajo 7%/3%, con comprobante rosa y camión verde, títulos con subrayados suaves y las condiciones comerciales intactas en ES/PT.
+- Iconos en movimiento continuo: comprobante oscila/flota cada 3,4 s; camión avanza y rebota cada 2,6 s; trazos de recorrido cada 1,3 s. Todo usa CSS transform/opacity sobre decoración oculta a lectores de pantalla; el texto permanece estático. Dos muestras separadas por 800 ms muestran matrices de transformación diferentes en ambos iconos y rectángulos idénticos para las filas.
+- QA visual: 390×900, 320×760 en ES/PT y escritorio 1366×1000. A 390 px, composición de 335×174,56 px; a 320 px ES, 273×224,84 px, con títulos en dos líneas cuando es necesario. Documento sin desbordamiento: `clientWidth=scrollWidth=375`, `305` y `1351` respectivamente. En escritorio se comprobó fondo transparente, borde de 0 px y ausencia de sombra. Capturas: `qa/perks-open-mobile-390.jpg`, `qa/perks-open-mobile-320.jpg`, `qa/perks-open-mobile-pt-320.jpg` y `qa/perks-open-desktop.jpg`.
+- Pausa manual y movimiento reducido emulado: `animation-name:none` en sección, iconos y trazos, `transform:none` y contenido con opacidad 1. Preferencias restauradas; consola sin errores ni warnings en el recorrido. Revisión estática independiente sin problemas accionables. Viewports emulados en Chromium; no probado en teléfono físico ni Safari móvil.
+- Build: JS **56,83 KB gzip**, CSS **10,93 KB gzip**; sin nuevas dependencias. La alternativa sin JavaScript y los enlaces comerciales no se modificaron en este refinamiento.
+- `npm run check` completo con exit 0: tests 12/12, lint, formato y build. `git diff --check` sin incidencias.

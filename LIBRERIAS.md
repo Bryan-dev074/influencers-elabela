@@ -124,3 +124,10 @@ Revisión: 2026-10-07. Leer completo antes de cambiar UI, animaciones o efectos.
 - Contenido comercial confirmado por Bryan: ElaBela absorbe el IVA para clientes paraguayos; envío gratis a todo Paraguay, sin compra mínima. Presentar la absorción como beneficio de ElaBela y conservar el significado en ES/PT.
 - Entrada y brillo mediante keyframes existentes, cubiertos por pausa global y movimiento reducido. Medir peso y comprobar escritorio/320/390 px, traducción y lectura sin JavaScript.
 - Medición: JS 56,79 KB gzip (+0,48 KB); CSS 10,82 KB gzip (+0,38 KB). Verificados ES/PT en 320/390/escritorio, saltos de línea, ausencia de desbordamiento, pausa y movimiento reducido. Beneficios y contacto visibles con JavaScript desactivado. Detalles en `docs/verification.md`.
+
+### Composición abierta de beneficios — 2026-10-07
+
+- Bryan rechazó la tarjeta chocolate anterior. Sustituirla por dos beneficios sobre el fondo existente, sin contenedor con fondo, borde o sombra. Reutilizar Playfair/Poppins y Lucide, con acentos rosa y verde de la identidad; no incorporar recursos de catálogo ni dependencias.
+- Movimiento continuo solicitado: comprobante con flotación y oscilación suave; camión con avance corto y trazos de recorrido. CSS controla transform/opacity de capas decorativas independientes, con texto estático. Pausa global y movimiento reducido existentes deben detener todos los loops.
+- Conservar audiencia paraguaya, absorción de IVA por ElaBela y envío gratis a todo Paraguay sin mínimo en ES/PT. Comprobar lectura, iconos en movimiento, ausencia de desplazamientos de layout y adaptación a 320/390/escritorio antes de publicar.
+- Medición actualizada: JS 56,83 KB gzip (+0,04 KB); CSS 10,93 KB gzip (+0,11 KB). Iconos animados con geometría de filas estable; pausa y movimiento reducido eliminan entrada y loops. Revisados ES/PT y tamaños 320/390/escritorio sin desbordamiento del documento.
