@@ -42,3 +42,15 @@ Revisión visual e interacciones en Chromium del host. No se realizó certificac
 Publicación Git confirmada: `git push -u origin HEAD:main` terminó con exit 0 y `git ls-remote --symref origin HEAD refs/heads/main` devolvió `0a5b57775956d5aaeb5ce958722c06768355b164` para `main` y `HEAD`. Rama predeterminada remota: `main`. Repositorio: https://github.com/Bryan-dev074/influencers-elabela. El siguiente commit solamente registra esta confirmación y cierra el plan; su SHA final se verifica en la entrega.
 
 El despliegue público de Vercel queda a cargo de Bryan; esta evidencia local no afirma que exista una URL pública de la landing.
+
+## Actualización — CTA de WhatsApp y compra por WhatsApp
+
+Solicitud posterior de Bryan, 2026-10-07: mejorar el botón y explicar que el cliente también puede comprar por WhatsApp usando el cupón o mencionando el video del influencer.
+
+- `WhatsAppButton` compartido en hero y cierre: verde profundo, icono de conversación/teléfono, flecha externa, texto principal y apoyo, brillo, relieve y estados hover/active/foco. Cierre con variante clara; no cambia el número ni el helper del mensaje.
+- FAQ nueva en ES/PT: dar el cupón o mencionar el video y nombre del influencer aplica el 7% de descuento correspondiente. No se añaden reglas de comisión ni se afirma que el sitio automatice la atribución de ventas por WhatsApp.
+- `npm run check` completo: tests 12/12, lint, formato y build con exit 0. JS **55,81 KB gzip**; CSS **10,25 KB gzip**. Activos de producción nuevos: `index-BKdJr3Dn.js` y `index-Csy5cvLX.css`.
+- Navegador en 1366×900, 390×844 y 320×760. Ambos CTA conservan toda la copia y apoyo a 12 px; en 320 px, `scrollWidth=clientWidth=305`, y el ancho de contenido de cada CTA coincide con su ancho disponible. Iconos de conversación cuadrados: 29×29 px en móvil normal y 26×26 px en móvil pequeño. Se corrigió una regla heredada que comprimía el icono del cierre.
+- Pregunta y respuesta abiertas y verificadas en ambos idiomas. CTA de inicio y cierre producen la misma URL, con `BRYAN & GLOW`/Cacao codificados correctamente y teléfono 595993038777. No se envió ningún mensaje.
+- Foco de teclado visible en el enlace; en pausa, `animation-name:none` en su brillo y transición del icono `0s`. Consola sin errores ni warnings en el recorrido actualizado. Revisión independiente aprobada tras retirar la colisión de icono.
+- Capturas locales: `qa/whatsapp-update-desktop.jpg` y `qa/faq-whatsapp-mobile.jpg`. El despliegue en Vercel continúa separado de la subida del código.

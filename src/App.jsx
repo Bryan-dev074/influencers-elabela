@@ -15,6 +15,7 @@ import {
 import AmbientBackground from './components/AmbientBackground.jsx'
 import CouponShowcase from './components/CouponShowcase.jsx'
 import Intro from './components/Intro.jsx'
+import WhatsAppButton from './components/WhatsAppButton.jsx'
 import { useMotionPreference } from './hooks/useMotionPreference.js'
 import { content } from './data/content.js'
 import { CONTACT_PHONE, STORE_URL } from './config.js'
@@ -47,21 +48,6 @@ function LetterTitle({ lines }) {
         </span>
       ))}
     </h1>
-  )
-}
-
-function WhatsAppLink({ href, children, className = '' }) {
-  return (
-    <a
-      className={`button button-whatsapp ${className}`}
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <MessageCircle size={20} aria-hidden="true" />
-      <span>{children}</span>
-      <ArrowRight className="button-arrow" size={18} aria-hidden="true" />
-    </a>
   )
 }
 
@@ -226,7 +212,9 @@ export default function App() {
               <LetterTitle lines={text.heroLines} />
               <p className="hero-description">{text.heroCopy}</p>
               <div className="hero-action">
-                <WhatsAppLink href={href}>{text.cta}</WhatsAppLink>
+                <WhatsAppButton href={href} detail={text.ctaDetail}>
+                  {text.cta}
+                </WhatsAppButton>
                 <p>
                   <span className="status-dot" />
                   {text.heroHint}
@@ -340,7 +328,13 @@ export default function App() {
             <p className="eyebrow">{text.closingEyebrow}</p>
             <h2>{text.closingTitle}</h2>
             <p className="closing-copy">{text.closingCopy}</p>
-            <WhatsAppLink href={href}>{text.closingCta}</WhatsAppLink>
+            <WhatsAppButton
+              href={href}
+              detail={text.closingCtaDetail}
+              variant="closing"
+            >
+              {text.closingCta}
+            </WhatsAppButton>
             <span className="closing-signature" aria-hidden="true">
               with love,
             </span>

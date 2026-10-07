@@ -84,3 +84,10 @@ Revisión: 2026-10-07. Leer completo antes de cambiar UI, animaciones o efectos.
 - Build final: JS 174,00 KB / 55,30 KB gzip; CSS 38,49 KB / 9,70 KB gzip. Cumple ambos presupuestos. Los originales PNG (~692 KB) y SVG (~10 KB), además de las fuentes remotas, se miden aparte.
 - Tests 12/12, lint, formato, build y auditoría npm completos; 0 vulnerabilidades reportadas. Fuente/activos/licencias comprobados, avisos conservados en `public/THIRD-PARTY-NOTICES.txt`.
 - Navegador: producción y desarrollo, 320/390/escritorio, ES/PT, intro normal/reducida, omisión/replay, foco/hover, pausa, elección, WhatsApp codificado, fondo con pointer y fallback no-JS. Evidencia y límites en `docs/verification.md`; revisión independiente aprobada tras corregir 3 P2.
+
+### Refinamiento de CTA — 2026-10-07
+
+- Reutilizar Lucide para conversación/teléfono y flecha externa, CSS nativo para relieve/brillo/hover. Sin nueva dependencia, motor ni set de iconos. Componente `WhatsAppButton` compartido en hero y cierre, verde profundo coordinado con Glow Studio.
+- Control de efectos y movimiento reducido existentes cubren los nuevos brillos y transiciones. Conservar enlace nativo, foco visible, texto de ayuda >=12 px y adaptación a 320 px; incluir consulta con selección codificada mediante el helper existente.
+- Añadir FAQ autorizada ES/PT sobre compra por WhatsApp con cupón o mención del video del influencer, aplicando 7% de descuento. No cambiar condiciones de comisión ni inventar atribución técnica automática.
+- Medición actualizada: JS 55,81 KB gzip (+0,51 KB), CSS 10,25 KB gzip (+0,55 KB). Sin nuevas dependencias. Verificados ambos CTA y FAQ ES/PT en 320/390/escritorio, foco, pausa y mensajes con selección; detalles en `docs/verification.md`.

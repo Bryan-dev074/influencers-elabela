@@ -16,7 +16,8 @@ export const content = {
     heroCopy:
       'Lo que recomendás puede convertirse en algo más. Compartí belleza con un cupón propio: tu comunidad ahorra y vos ganás por cada venta.',
     cta: 'Hablemos por WhatsApp',
-    heroHint: 'Conversemos y armemos tu colaboración.',
+    ctaDetail: 'Conversemos sobre tu colaboración',
+    heroHint: 'Hablá directamente con el equipo de ElaBela.',
     discountTitle: 'Para tu comunidad',
     discountBody: 'Descuento al comprar con tu cupón.',
     commissionTitle: 'Para vos',
@@ -65,6 +66,7 @@ export const content = {
     closingCopy:
       'Contanos quién sos, qué creás y cómo te gustaría colaborar con ElaBela. Los detalles los conversamos juntos.',
     closingCta: 'Conversemos sobre mi colaboración',
+    closingCtaDetail: 'Elegí tu cupón. Acordemos los detalles.',
     faqTitle: 'Antes de empezar',
     faqs: [
       [
@@ -78,6 +80,10 @@ export const content = {
       [
         '¿Cómo funcionan el descuento y la comisión?',
         'Cuando un cliente compra usando tu cupón, obtiene 7% de descuento. Vos ganás 3% de comisión por esa venta. La forma de pago y los demás detalles se acuerdan al conversar con ElaBela.',
+      ],
+      [
+        '¿Mi comunidad también puede usar el cupón por WhatsApp?',
+        'Sí. Si un cliente compra por WhatsApp, puede dar tu cupón o decir que llegó por tu video, indicando tu nombre. En ambos casos se le aplica el 7% de descuento de tu cupón.',
       ],
     ],
     footer: 'Belleza que compartimos.',
@@ -104,7 +110,8 @@ export const content = {
     heroCopy:
       'O que você recomenda pode se tornar algo mais. Compartilhe beleza com um cupom próprio: sua comunidade economiza e você ganha por cada venda.',
     cta: 'Vamos conversar no WhatsApp',
-    heroHint: 'Vamos conversar e criar sua colaboração.',
+    ctaDetail: 'Vamos conversar sobre sua colaboração',
+    heroHint: 'Fale diretamente com a equipe ElaBela.',
     discountTitle: 'Para sua comunidade',
     discountBody: 'Desconto ao comprar com seu cupom.',
     commissionTitle: 'Para você',
@@ -153,6 +160,7 @@ export const content = {
     closingCopy:
       'Conte quem você é, o que cria e como gostaria de colaborar com a ElaBela. Conversamos juntos sobre os detalhes.',
     closingCta: 'Conversar sobre minha colaboração',
+    closingCtaDetail: 'Escolha seu cupom. Vamos combinar os detalhes.',
     faqTitle: 'Antes de começar',
     faqs: [
       [
@@ -166,6 +174,10 @@ export const content = {
       [
         'Como funcionam o desconto e a comissão?',
         'Quando um cliente compra usando seu cupom, recebe 7% de desconto. Você ganha 3% de comissão por essa venda. A forma de pagamento e os outros detalhes são combinados ao conversar com a ElaBela.',
+      ],
+      [
+        'Minha comunidade também pode usar o cupom pelo WhatsApp?',
+        'Sim. Se um cliente comprar pelo WhatsApp, pode informar seu cupom ou dizer que chegou pelo vídeo, mencionando o nome do influencer. Nos dois casos, recebe o desconto de 7% do seu cupom.',
       ],
     ],
     footer: 'Beleza que compartilhamos.',
