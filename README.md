@@ -52,6 +52,8 @@ La composición editable está en `design/share-card.html`. Para regenerarla, in
 
 Después de publicar, comprobar que la página devuelva los metadatos y que la imagen responda `200` con `Content-Type: image/png`. La presentación y la caché de la vista previa dependen de WhatsApp o la aplicación que comparte el enlace; una vista previa de un mensaje anterior no confirma el resultado del despliegue nuevo.
 
+La primera tarjeta se comprobó en un borrador de WhatsApp Web con **https://influencers.elabela.com.py/?v=1**. Ese parámetro conserva la misma página y permite distinguir el enlace de la vista previa anterior; el dominio canónico sigue siendo la dirección sin parámetro.
+
 ## Contacto y personalización
 
 El WhatsApp comercial confirmado es **+595 993 038777**. `CONTACT_PHONE`, la dirección de la tienda, los nombres de ejemplo y los cuatro diseños se configuran en `src/config.js`.
