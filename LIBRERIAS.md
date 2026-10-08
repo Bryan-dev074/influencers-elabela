@@ -144,3 +144,21 @@ Revisión: 2026-10-07. Leer completo antes de cambiar UI, animaciones o efectos.
 - Convertir el enlace existente en un botón chocolate visible, con nombre de acción ES/PT, dominio de destino y bolsa/flecha de Lucide ya adoptado. Conservar el logo real, `STORE_URL` y enlace nativo externo; anunciar la nueva pestaña a lectores de pantalla y mantener foco visible.
 - Reutilizar el brillo CSS existente y añadir un avance corto de flecha con transform; sin dependencias ni otro motor. Los controles globales de pausa, la intro y movimiento reducido cubren ambos loops. A 560 px o menos, dar al botón una fila completa con texto adaptable y espacios reservados para iconos.
 - Verificación integrada: tests 12/12, lint, formato y build completos. JS 56,93 KB gzip (+0,10 KB); CSS 11,31 KB gzip (+0,38 KB). Botón comprobado en 1366/320/390 px, ES/PT, con foco visible, sin desbordamiento y animaciones detenidas mediante pausa y movimiento reducido. Evidencia en `docs/verification.md`.
+
+### Opciones de luces para WhatsApp — preview, 2026-10-08
+
+- Bryan pidió comparar alternativas antes de aplicar cambios a ambos CTA. Prototipo aislado: órbita de luz exterior con gradiente cónico y `@property`, ondas de contorno y destellos que salen del botón. Reutilizar CSS nativo, Poppins/Playfair y SVG originales de WhatsApp sin alterar sus trazos; ninguna dependencia nueva en la landing.
+- Órbita recomendada por continuidad, protagonismo y coherencia con Glow Studio. Las tres propuestas se presentan sobre los fondos reales del hero y cierre; velocidad, intensidad y pausa se pueden comparar en la preview. Movimiento reducido y decoraciones sin eventos de puntero conservan lectura e interacción.
+- Son candidatas pendientes de elección, sin cambiar `WhatsAppButton`, CSS de producción ni publicación. Para integrar la elegida, usar una capa exterior porque el enlace actual recorta su brillo interno; limitar extensión móvil, preservar foco y conectar la pausa global existente. No adoptar otro motor de animación.
+
+### Combinación de luces y llamada — preview, 2026-10-08
+
+- Bryan pidió ver la combinación de órbita y destellos con el icono de WhatsApp en movimiento constante de llamada. Preview aislada: dos estelas exteriores cada 4,8 s, destellos desfasados y el SVG original vibrando con balanceo de ±9° cada 1,6 s; en móvil, ±7° y menor desplazamiento. Ondas pequeñas alrededor del icono, con texto y flecha estables. CSS nativo, sin incorporar dependencias.
+- Revisada en navegador a 736 y 320 px: ambos botones y logos visibles, sin desbordamiento horizontal; pausa funcional y movimiento reducido detienen todos los efectos. Sin errores ni avisos en consola. Continúa como propuesta para elegir, sin modificar ni publicar el componente de producción.
+
+### Combinación aprobada para ambos CTA — 2026-10-08
+
+- Bryan aprobó la combinación de órbita, destellos y efecto de llamada. Integrar en el componente compartido con una capa exterior no interactiva y un único enlace nativo; conservar los SVG originales, los textos ES/PT y el número comercial. Los recursos existentes satisfacen el alcance; no adoptar dependencias ni otro motor.
+- Encapsular los estilos en `WhatsAppButton.css`. Dos estelas recorren una máscara de borde fija mediante un gradiente que rota con transform cada 4,8 s; halo, seis destellos desfasados y vibración constante del icono cada 1,6 s. Animar únicamente transform/opacity; reducir ángulo y salida de luces en móvil. El símbolo original no cambia sus trazos.
+- Mantener enlace y luces con el mismo ancho/altura, llevar el margen del cierre a la capa exterior y reservar espacio para el texto de ayuda. Atenuar luces durante foco visible; aplicar pausa global, pausa de la intro y movimiento reducido a todas las capas. Comprobar 320/390/500/escritorio, idiomas, foco y ausencia de desbordamiento antes de publicar.
+- Verificados 1366/320/390/500/560 px, ES/PT, símbolos cargados y destinos de WhatsApp intactos. Pausa y movimiento reducido detienen iconos, ondas, destellos y las capas de órbita. Revisión independiente cerrada tras quitar el max-width heredado del cierre. Peso actual: JS 57,04 KB gzip (+0,11 KB), CSS 12,40 KB gzip (+1,09 KB), dentro de los presupuestos existentes.
