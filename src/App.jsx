@@ -391,9 +391,23 @@ export default function App() {
             />
             <p>{text.footer}</p>
           </div>
-          <a href={STORE_URL} target="_blank" rel="noopener noreferrer">
-            {text.visitStore}
-            <ArrowRight size={15} aria-hidden="true" />
+          <a
+            className="store-button"
+            href={STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span className="store-button-icon" aria-hidden="true">
+              <ShoppingBag size={24} strokeWidth={1.6} />
+            </span>
+            <span className="store-button-copy">
+              <span className="store-button-title">{text.visitStore}</span>
+              <span className="store-button-domain">elabela.com.py</span>
+            </span>
+            <span className="store-button-arrow" aria-hidden="true">
+              <ArrowRight size={20} />
+            </span>
+            <span className="sr-only">{text.storeNewTab}</span>
           </a>
           <span>© {new Date().getFullYear()} ElaBela</span>
         </footer>

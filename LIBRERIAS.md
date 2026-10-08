@@ -78,6 +78,13 @@ Revisión: 2026-10-07. Leer completo antes de cambiar UI, animaciones o efectos.
 - Node `node:test`: pruebas de contrato del nombre de ejemplo y URL de WhatsApp, sin dependencia de test adicional.
 - Browser Use nativo del host para QA visual/interacciones; agent-browser no está instalado. No instalar una segunda ruta de navegador.
 
+## Tarjeta para compartir — 2026-10-08
+
+- Reutilizar logos originales, Poppins/Playfair y CSS nativo de la identidad Glow Studio para una composición estática de 1200×630 px. Fuente editable en `design/share-card.html`; exportar PNG mediante captura del navegador ya adoptado. Sin generador en producción, dependencia adicional ni nuevos archivos de fuente.
+- Imagen pública versionada en `public/brand/influencers-share-v1.png`, con presupuesto de 300 KB como objetivo propio de rendimiento. Es un recurso de vista previa, sin carga adicional dentro de la landing ni aumento del runtime.
+- Open Graph y Twitter Card en el HTML estático: dirección absoluta HTTPS, dimensiones, MIME y descripción alternativa. Disponible para crawlers sin ejecutar React. Verificar PNG, metadatos, acceso público y consistencia con el despliegue; la presentación final depende del cliente que comparte el enlace.
+- Exportación: PNG verificado de 1200×630 px, 325.902 bytes (325,9 KB), ligeramente por encima del objetivo de 300 KB. Se conserva la composición con sombras y gradientes; la imagen no se descarga al abrir la landing. Sin aumento del runtime por los metadatos o el arte.
+
 ## Comprobaciones y resultados
 
 - Antes de publicar: tests, lint, build, auditoría npm, intro, cambio automático/manual de cupón, WhatsApp, ES/PT, teclado, 320/390/escritorio, movimiento reducido, ausencia de errores de consola.
@@ -131,3 +138,9 @@ Revisión: 2026-10-07. Leer completo antes de cambiar UI, animaciones o efectos.
 - Movimiento continuo solicitado: comprobante con flotación y oscilación suave; camión con avance corto y trazos de recorrido. CSS controla transform/opacity de capas decorativas independientes, con texto estático. Pausa global y movimiento reducido existentes deben detener todos los loops.
 - Conservar audiencia paraguaya, absorción de IVA por ElaBela y envío gratis a todo Paraguay sin mínimo en ES/PT. Comprobar lectura, iconos en movimiento, ausencia de desplazamientos de layout y adaptación a 320/390/escritorio antes de publicar.
 - Medición actualizada: JS 56,83 KB gzip (+0,04 KB); CSS 10,93 KB gzip (+0,11 KB). Iconos animados con geometría de filas estable; pausa y movimiento reducido eliminan entrada y loops. Revisados ES/PT y tamaños 320/390/escritorio sin desbordamiento del documento.
+
+### Invitación a la tienda en el pie — 2026-10-08
+
+- Convertir el enlace existente en un botón chocolate visible, con nombre de acción ES/PT, dominio de destino y bolsa/flecha de Lucide ya adoptado. Conservar el logo real, `STORE_URL` y enlace nativo externo; anunciar la nueva pestaña a lectores de pantalla y mantener foco visible.
+- Reutilizar el brillo CSS existente y añadir un avance corto de flecha con transform; sin dependencias ni otro motor. Los controles globales de pausa, la intro y movimiento reducido cubren ambos loops. A 560 px o menos, dar al botón una fila completa con texto adaptable y espacios reservados para iconos.
+- Verificación integrada: tests 12/12, lint, formato y build completos. JS 56,93 KB gzip (+0,10 KB); CSS 11,31 KB gzip (+0,38 KB). Botón comprobado en 1366/320/390 px, ES/PT, con foco visible, sin desbordamiento y animaciones detenidas mediante pausa y movimiento reducido. Evidencia en `docs/verification.md`.

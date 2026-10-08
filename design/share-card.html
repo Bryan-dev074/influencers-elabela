@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tarjeta para compartir · ElaBela Influencers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,400&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #f8eee7;
+        color: #57392f;
+        font-family: 'Poppins', Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      .artwork {
+        position: relative;
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+        isolation: isolate;
+        background:
+          radial-gradient(ellipse at 74% 25%, #edc9be 0%, transparent 55%),
+          radial-gradient(ellipse at 100% 100%, #d8dfcf 0%, transparent 48%),
+          #f8eee7;
+      }
+      .orbit {
+        position: absolute;
+        width: 650px;
+        height: 650px;
+        border: 1px solid #b8856430;
+        border-radius: 50%;
+        top: -95px;
+        left: 663px;
+        z-index: -1;
+      }
+      .orbit::after {
+        content: '';
+        position: absolute;
+        inset: 34px;
+        border: 1px solid #b8856422;
+        border-radius: inherit;
+      }
+      .brand {
+        position: absolute;
+        top: 36px;
+        left: 49px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .brand img {
+        width: 109px;
+        height: 109px;
+        object-fit: contain;
+      }
+      .brand span {
+        padding-left: 22px;
+        border-left: 1px solid #b8856450;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+      }
+      .story {
+        position: absolute;
+        left: 67px;
+        top: 168px;
+        width: 565px;
+      }
+      h1 {
+        margin: 0;
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 80px;
+        font-weight: 500;
+        line-height: 1.11;
+        letter-spacing: -3px;
+      }
+      h1 em {
+        font-weight: 400;
+        color: #a86756;
+      }
+      .story p {
+        margin: 25px 0 0;
+        font-size: 21px;
+        line-height: 1.7;
+        color: #826759;
+      }
+      .signature {
+        position: absolute;
+        left: 68px;
+        bottom: 54px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: 0.3px;
+      }
+      .signature::before {
+        content: '';
+        width: 28px;
+        height: 1px;
+        background: #b18758;
+      }
+      .coupon-stack {
+        position: absolute;
+        left: 770px;
+        top: 90px;
+        width: 344px;
+        height: 409px;
+        border-radius: 25px;
+        background: #caad91;
+        transform: rotate(8deg);
+        box-shadow: 0 28px 55px #7752381a;
+      }
+      .coupon {
+        position: absolute;
+        left: 730px;
+        top: 100px;
+        width: 354px;
+        height: 403px;
+        border-radius: 22px;
+        color: #f8eee7;
+        background: linear-gradient(135deg, #466c59, #285442);
+        transform: rotate(-7deg);
+        box-shadow: 0 28px 45px #5f49392b;
+        overflow: hidden;
+      }
+      .coupon::before {
+        content: '';
+        position: absolute;
+        right: -82px;
+        top: -96px;
+        width: 325px;
+        height: 325px;
+        border: 1px solid #f8eee71c;
+        border-radius: 50%;
+      }
+      .coupon::after {
+        content: '';
+        position: absolute;
+        right: -62px;
+        top: -65px;
+        width: 278px;
+        height: 278px;
+        border: 1px solid #f8eee71c;
+        border-radius: 50%;
+      }
+      .coupon-top {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 26px 30px 0;
+      }
+      .coupon-top img {
+        width: 66px;
+        height: 60px;
+      }
+      .coupon-top span {
+        font-size: 10px;
+        letter-spacing: 2.4px;
+      }
+      .coupon-main {
+        position: relative;
+        z-index: 1;
+        padding: 24px 30px 0;
+      }
+      .coupon-name {
+        margin: 0 0 4px;
+        font-size: 29px;
+        font-weight: 500;
+        letter-spacing: 1px;
+      }
+      .coupon-value {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .coupon-value strong {
+        font-size: 102px;
+        font-weight: 500;
+        line-height: 1.25;
+        letter-spacing: -6px;
+      }
+      .coupon-value small {
+        font-size: 40px;
+        letter-spacing: -1px;
+      }
+      .coupon-value p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      .coupon-tear {
+        position: relative;
+        margin-top: 18px;
+        height: 15px;
+      }
+      .coupon-tear::before,
+      .coupon-tear::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        background: #ecd2c4;
+        border-radius: 50%;
+      }
+      .coupon-tear::before {
+        left: -10px;
+      }
+      .coupon-tear::after {
+        right: -10px;
+      }
+      .coupon-tear span {
+        display: block;
+        margin: 9px 24px 0;
+        border-top: 1px dashed #f8eee74d;
+      }
+      .coupon-bottom {
+        margin: 21px 30px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .coupon-bottom span {
+        font-size: 8px;
+        letter-spacing: 1.7px;
+      }
+      .barcode {
+        width: 57px;
+        height: 19px;
+        opacity: 0.55;
+        background: repeating-linear-gradient(
+          90deg,
+          #f8eee7 0 2px,
+          transparent 2px 4px,
+          #f8eee7 4px 5px,
+          transparent 5px 8px
+        );
+      }
+      .commission {
+        position: absolute;
+        left: 731px;
+        top: 479px;
+        width: 366px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        padding: 15px 26px;
+        gap: 20px;
+        border: 1px solid #fff7ee;
+        border-radius: 17px;
+        background: #fffaf3;
+        box-shadow: 0 17px 28px #68493514;
+        transform: rotate(3deg);
+      }
+      .commission strong {
+        font-size: 42px;
+        font-weight: 500;
+        letter-spacing: -2px;
+        white-space: nowrap;
+      }
+      .commission small {
+        font-size: 22px;
+        letter-spacing: -1px;
+      }
+      .commission p {
+        margin: 0;
+        font-size: 15px;
+        line-height: 1.4;
+        color: #826759;
+      }
+      .commission svg {
+        width: 30px;
+        height: 30px;
+        margin-left: auto;
+        color: #a6755b;
+      }
+    </style>
+  </head>
+  <body>
+    <main
+      class="artwork"
+      aria-label="ElaBela Influencers: tu nombre, tu cupón. 7% de descuento para los clientes y 3% de comisión para vos."
+    >
+      <div class="orbit" aria-hidden="true"></div>
+      <div class="brand">
+        <img
+          src="/brand/logo-dark.png"
+          alt="ElaBela Glow"
+          width="109"
+          height="109"
+        />
+        <span>Influencers</span>
+      </div>
+      <div class="story">
+        <h1>Tu nombre.<br /><em>Tu cupón.</em></h1>
+        <p>Tu comunidad ahorra.<br />Vos ganás por cada venta.</p>
+      </div>
+      <div class="signature">influencers.elabela.com.py</div>
+      <div class="coupon-stack" aria-hidden="true"></div>
+      <div class="coupon" aria-hidden="true">
+        <div class="coupon-top">
+          <img src="/brand/logo-cream.svg" alt="" width="66" height="60" />
+          <span>TU CUPÓN EXCLUSIVO</span>
+        </div>
+        <div class="coupon-main">
+          <p class="coupon-name">TUNOMBRE</p>
+          <div class="coupon-value">
+            <strong>7<small>%</small></strong>
+            <p>de descuento<br />para los clientes</p>
+          </div>
+        </div>
+        <div class="coupon-tear"><span></span></div>
+        <div class="coupon-bottom">
+          <span>YOUR NAME. YOUR GLOW.</span>
+          <div class="barcode"></div>
+        </div>
+      </div>
+      <div class="commission" aria-hidden="true">
+        <strong>3<small>%</small></strong>
+        <p>de comisión<br />para vos</p>
+        <svg
+          viewBox="0 0 32 32"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.7"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M5 12v8M1 16h8M22 6v20M27 10h-7a4 4 0 0 0 0 8h4a4 4 0 0 1 0 8h-7"
+          />
+        </svg>
+      </div>
+    </main>
+  </body>
+</html>

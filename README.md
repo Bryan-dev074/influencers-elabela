@@ -42,7 +42,15 @@ Importar el repositorio **[Bryan-dev074/influencers-elabela](https://github.com/
 | Node.js              | 24.x o una versión admitida >=22.12.0 |
 | Variables de entorno | Ninguna                               |
 
-No necesita backend ni credenciales. La importación y publicación en Vercel corresponden a Bryan; este README no confirma un despliegue público.
+No necesita backend ni credenciales. El dominio de producción configurado es **https://influencers.elabela.com.py/**. La evidencia de cada publicación se registra por separado en `docs/verification.md`.
+
+## Vista previa al compartir
+
+`index.html` incluye Open Graph y Twitter Card directamente en el HTML, con título, descripción, URL canónica e imagen absoluta HTTPS. Los crawlers pueden leerlos sin ejecutar JavaScript. La tarjeta de marca está en `public/brand/influencers-share-v1.png` (1200×630 px), con los logos originales y los porcentajes 7%/3%.
+
+La composición editable está en `design/share-card.html`. Para regenerarla, iniciar `npm run dev`, abrir `/design/share-card.html`, comprobar que las fuentes y los dos logos hayan cargado, y exportar únicamente el rectángulo de 1200×630 px como PNG. No se publica esta plantilla en `dist/`; Vite copia solo el PNG de `public/`. Si cambia la tarjeta, usar un nombre de archivo nuevo y actualizar `og:image` y `twitter:image` en `index.html` para distinguir el recurso anterior.
+
+Después de publicar, comprobar que la página devuelva los metadatos y que la imagen responda `200` con `Content-Type: image/png`. La presentación y la caché de la vista previa dependen de WhatsApp o la aplicación que comparte el enlace; una vista previa de un mensaje anterior no confirma el resultado del despliegue nuevo.
 
 ## Contacto y personalización
 

@@ -93,6 +93,7 @@ export const content = {
     ],
     footer: 'Belleza que compartimos.',
     visitStore: 'Conocé la tienda',
+    storeNewTab: '(se abre en otra pestaña)',
     demoNote:
       'Elegir un nombre o un diseño aquí prepara tu consulta. El cupón se acuerda con ElaBela.',
     languageLabel: 'Idioma',
@@ -192,6 +193,7 @@ export const content = {
     ],
     footer: 'Beleza que compartilhamos.',
     visitStore: 'Conheça a loja',
+    storeNewTab: '(abre em outra aba)',
     demoNote:
       'Escolher um nome ou design aqui prepara sua consulta. O cupom será combinado com a ElaBela.',
     languageLabel: 'Idioma',
