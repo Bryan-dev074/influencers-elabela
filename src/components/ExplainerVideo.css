@@ -1,0 +1,172 @@
+.explainer-section.page-width {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+  align-items: center;
+  gap: clamp(45px, 8vw, 115px);
+  max-width: 940px;
+  margin-block: 28px 105px;
+}
+.explainer-copy .eyebrow {
+  color: #826759;
+  font-size: 11px;
+}
+.explainer-copy h2 {
+  margin-top: 20px;
+  max-width: 430px;
+  font-size: clamp(36px, 4vw, 52px);
+  line-height: 1.18;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+.explainer-description {
+  max-width: 390px;
+  margin-top: 24px;
+  color: #795c4e;
+  font-size: 14px;
+  line-height: 1.9;
+  text-wrap: pretty;
+}
+.explainer-sound {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 28px;
+  color: #3d6554;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.explainer-figure {
+  width: min(100%, 326px);
+  min-width: 0;
+  margin: 0;
+  justify-self: center;
+}
+.explainer-player {
+  position: relative;
+  padding: 6px;
+  border: 1px solid #a17c624d;
+  border-radius: 27px;
+  background: #57392f;
+  box-shadow: 0 24px 50px -24px #69433366;
+}
+.explainer-player video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 16;
+  border-radius: 20px;
+  background: #57392f;
+  object-fit: contain;
+}
+.explainer-play {
+  position: absolute;
+  inset: 7px 7px 54px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  border-radius: 20px 20px 0 0;
+  background: linear-gradient(transparent 20%, #30211712 50%, #30211766);
+  color: #fffaf0;
+  font-size: 13px;
+  font-weight: 500;
+  text-shadow: 0 2px 8px #30211799;
+}
+.explainer-play-icon {
+  display: grid;
+  place-items: center;
+  width: 70px;
+  height: 70px;
+  padding-left: 4px;
+  border: 1px solid #fffaf080;
+  border-radius: 50%;
+  background: #f8eee7eb;
+  color: #57392f;
+  box-shadow: 0 8px 28px #30211740;
+  transition: transform 0.2s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.explainer-play:focus-visible {
+  outline-color: #fffaf0;
+  outline-offset: -5px;
+}
+.explainer-duration {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: #302117aa;
+  color: #fffaf0;
+  font-size: 12px;
+  line-height: 1.6;
+  pointer-events: none;
+}
+.explainer-figure figcaption {
+  margin-top: 16px;
+  color: #826759;
+  font-size: 12px;
+  line-height: 1.8;
+  text-align: center;
+}
+.explainer-error {
+  margin-top: 12px;
+  color: #57392f;
+  font-size: 12px;
+  line-height: 1.8;
+}
+.explainer-error a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.hero-action .video-shortcut {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 19px;
+  padding-block: 10px;
+  color: #795c4e;
+  font-size: 12px;
+  line-height: 1.5;
+}
+@media (hover: hover) and (pointer: fine) {
+  .explainer-play:hover .explainer-play-icon {
+    transform: scale(1.06);
+  }
+  .video-shortcut:hover {
+    color: #3d6554;
+  }
+}
+@media (max-width: 700px) {
+  .explainer-section.page-width {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+    max-width: 520px;
+    margin-block: 15px 70px;
+  }
+  .explainer-copy {
+    text-align: center;
+  }
+  .explainer-copy .eyebrow,
+  .explainer-sound {
+    justify-content: center;
+  }
+  .explainer-copy h2,
+  .explainer-description {
+    margin-inline: auto;
+  }
+  .explainer-copy h2 {
+    margin-top: 16px;
+    font-size: 36px;
+  }
+  .explainer-description {
+    margin-top: 18px;
+    font-size: 13px;
+  }
+  .explainer-sound {
+    margin-top: 18px;
+  }
+  .explainer-figure {
+    width: min(100%, 310px);
+  }
+}

@@ -15,6 +15,7 @@ import {
 import AmbientBackground from './components/AmbientBackground.jsx'
 import CouponShowcase from './components/CouponShowcase.jsx'
 import CommunityPerks from './components/CommunityPerks.jsx'
+import ExplainerVideo from './components/ExplainerVideo.jsx'
 import Intro from './components/Intro.jsx'
 import WhatsAppButton from './components/WhatsAppButton.jsx'
 import { useMotionPreference } from './hooks/useMotionPreference.js'
@@ -235,6 +236,11 @@ export default function App() {
                   <span className="status-dot" />
                   {text.heroHint}
                 </p>
+                <a className="video-shortcut" href="#video-explicacion">
+                  <CirclePlay size={18} aria-hidden="true" />
+                  {text.videoShortcut}
+                  <ArrowRight size={14} aria-hidden="true" />
+                </a>
               </div>
               <div className="benefits">
                 <div className="benefit">
@@ -269,6 +275,7 @@ export default function App() {
               {text.how}
             </a>
           </section>
+          <ExplainerVideo text={text} introActive={introActive} />
           <section
             className="how-section page-width scroll-reveal"
             id="como-funciona"
